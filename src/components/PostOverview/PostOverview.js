@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ArticleService from '../../services/ArticleService';
 import Card from '@material-ui/core/Card';
+import Grid from '@material-ui/core/Grid';
 
 class PostOverview extends Component {
 	constructor(props) {
@@ -31,9 +32,16 @@ class PostOverview extends Component {
 				<Card>
 					<CardHeader title={article.title}/>
 					<CardContent>
-						<Typography>
-							{article.content}
-						</Typography>
+						<Grid container direction="row" spacing={4}>
+							<Grid item xs={8}>
+								<Typography>
+									{article.content}
+								</Typography>
+							</Grid>
+							<Grid item xs={4}>
+								<img class="post-image" src="/logo192.png" title="Example img"></img>
+							</Grid>
+						</Grid>
 					</CardContent>
 				</Card>
 			</div>

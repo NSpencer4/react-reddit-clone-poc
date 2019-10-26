@@ -1,3 +1,13 @@
 .post-overview-container {
     text-align: left;
 }
+.MuiPaper-rounded {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.post-overview-container:not(:last-child) {
+    margin-bottom: 10px;
+}
+.post-image {
+    width: 100%;
+}
