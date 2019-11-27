@@ -3,7 +3,7 @@ import {CardHeader} from '@material-ui/core';
 import './PostOverview.css'
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import ArticleService from '../../services/ArticleService';
+import PostService from '../../services/PostService';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 
@@ -12,30 +12,30 @@ class PostOverview extends Component {
 		super(props);
 		this.state = {
 			isLoaded: false,
-			articles: []
+			posts: []
 		};
-		this.articleService = new ArticleService();
+		this.postService = new PostService();
 	}
 
 	componentDidMount() {
-		this.articleService.getArticles().then((articles) => {
+		this.postService.getPosts().then((posts) => {
 			this.setState({
 				isLoaded: true,
-				articles: articles
+				articles: posts
 			});
 		});
 	}
 
-	renderArticle(article, key) {
+	renderPost(post, key) {
 		return (
 			<div className="post-overview-container" key={key}>
 				<Card>
-					<CardHeader title={article.title}/>
+					<CardHeader title={post.title}/>
 					<CardContent>
 						<Grid container direction="row" spacing={4}>
 							<Grid item xs={8}>
 								<Typography>
-									{article.content}
+									{post.body}
 								</Typography>
 							</Grid>
 							<Grid item xs={4}>
@@ -49,12 +49,12 @@ class PostOverview extends Component {
 	}
 
 	render() {
-		let renderedArticles = [];
+		let renderedPosts = [];
 		if (this.state.isLoaded) {
-			this.state.articles.forEach((article, index) => {
-				renderedArticles.push(this.renderArticle(article, index));
+			this.state.posts.forEach((post, index) => {
+				renderedPosts.push(this.renderPost(post, index));
 			});
-			return (renderedArticles);
+			return (renderedPosts);
 		} else {
 			return <div>Loading...</div>;
 		}
