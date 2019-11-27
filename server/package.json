@@ -1,0 +1,9 @@
+{
+  "name": "react-reddit-clone-poc-api",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.14.0"
+  }
+}
