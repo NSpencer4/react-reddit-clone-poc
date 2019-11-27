@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Homepage.css';
 import PostOverview from "../PostOverview/PostOverview";
 import {Box} from '@material-ui/core';
+import PostForm from '../PostForm/PostForm';
 
 class Homepage extends Component {
   render() {
@@ -11,7 +12,8 @@ class Homepage extends Component {
           <h1 id="site-name">Reddit Clone</h1>
         </header>
         <Box>
-            <PostOverview/>
+          <PostForm/>
+          <PostOverview/>
         </Box>
       </div>
     );
