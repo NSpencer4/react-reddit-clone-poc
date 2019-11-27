@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import PostService from '../../services/PostService';
 
 class PostForm extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class PostForm extends Component {
 
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.postService = new PostService();
   }
 
   handleFormChange(event) {
@@ -42,6 +44,8 @@ class PostForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.dir(this.state.formState);
+    let postBody = Object.assign({}, this.state.formState);
+    this.postService.sendPost(this.state.formState.title, this.state.formState.body);
   }
 
 	render() {

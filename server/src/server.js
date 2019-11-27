@@ -12,7 +12,7 @@ client.connect();
 
 // TODO: Seperate code into modules & add error handling
 post.get('/', (req, res) => {
-	client.query('SELECT * FROM posts.post LIMIT 5', function (err, result) {
+	client.query('SELECT * FROM posts.post LIMIT 50', function (err, result) {
 		if (err) {
 			console.error(err);
 		} else {

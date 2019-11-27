@@ -39,7 +39,7 @@ class PostOverview extends Component {
 								</Typography>
 							</Grid>
 							<Grid item xs={4}>
-								<img class="post-image" src="/logo192.png" title="Example img"></img>
+								<img className="post-image" src="/logo192.png" title="Example img"></img>
 							</Grid>
 						</Grid>
 					</CardContent>
