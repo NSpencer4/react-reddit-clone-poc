@@ -21,7 +21,7 @@ class PostOverview extends Component {
 		this.postService.getPosts().then((posts) => {
 			this.setState({
 				isLoaded: true,
-				articles: posts
+				posts: posts
 			});
 		});
 	}
